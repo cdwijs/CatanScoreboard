@@ -1,0 +1,142 @@
+
+
+Create a github account, and fork the repository
+** windows **
+Getting the source and contribute changes
+Getting Qt
+Qt git integration
+Getting Dia
+Debugging
+Building a stand alone program
+Building the installer
+Deploy to android device
+** linux **
+Getting the source and contribute changes
+Getting Qt
+Getting Dia
+Debugging
+Building a stand alone program
+Building the installer
+Deploy to android device
+
+================================================
+Create a github account, and fork the repository
+================================================
+Go to github.com, create an account, and login.
+Search for CatanScoreboard, and goto the repository.
+https://github.com/cdwijs/CatanScoreboard
+Next click "fork" at the top-left, then click fork.
+Copy the "HTTPS clone URL" line at the right side, it should be something like this:
+https://github.com/username/CatanScoreboard.git
+
+===================================================
+Getting the source and contribute changes (Windows)
+===================================================
+Download and install tortoisegit from here:
+https://code.google.com/p/tortoisegit/wiki/Download
+
+create a new folder somewhere on your hard disk.
+right click the folder, choose "Git Clone..."
+paste the "HTTPS clone URL" line into the line "URL:" it should be something like this:
+https://github.com/username/CatanScoreboard.git
+click OK. the repository is now cloned into the folder on your hard disk.
+
+When you have edited files, right click on the folder, choose commit -> master.
+You will be asked to enter information why you made the changes. This information is then stored locally on your computer.
+Next, publish the changes you have made to github by rightclick, and push. You will be asked for your github username and password. Now the changes are transferred to your repository on github.
+
+Finally, login to github, navigate to your fork of CatanScoreboard, and click "Pull request", and then click "Create pull request"
+Provide a meaningful summary and description, then click "Create pull request". Now the developers are notified of your changes.
+
+====================
+Getting Qt (Windows)
+====================
+http://www.qt.io/download-open-source/
+http://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe
+welcome-> next
+qt account -> leave all empty, next
+setup -> next
+installation folder: c:\qt -> next
+select components: qt 5.4, deselect all, select minGW 4.9.1 -> next
+***and tools-mingw4.9.1
+license Agreement: agree -> next
+start menu shortcuts -> next
+install
+installation finished -> next -> launch
+
+============================
+Qt git integration (windows)
+============================
+Install Git for windows, accept all the defaults except "Use Git from Windows Command Prompt"
+https://msysgit.github.io/
+Next restart the computer to make sure the PATH variable has been updated. Start cmd.exe and type "path <enter>". "c:\Program Files (x86)\Git\cmd" should be present
+
+=====================
+Getting Dia (windows)
+=====================
+Download and install dia from here, accept the default settings
+http://dia-installer.de/
+
+===================
+Debugging (windows)
+===================
+Not written yet
+
+========================================
+Building a stand alone program (windows)
+========================================
+Not written yet
+
+================================
+Building the installer (windows)
+================================
+Not written yet
+
+==================================
+Deploy to android device (windows)
+==================================
+Not written yet
+
+============================================================
+Getting the source and contribute changes (ubuntu)
+============================================================
+Open a terminal, create a folder somewhere on your system and cd into it. Then type the following:
+$ git clone https://github.com/username/CatanScoreboard.git The repository is now cloned into the folder on your hard disk.
+
+Double click "CatanScoreboard.pro" Now Qt creator will start, and load the project.
+When you have edited files, choose tools->git->local repository->commit. Activate the checkbox [X] files->check all, type a meaningful description of the change, and press commit. This information is then stored locally on your computer.
+Next, publish the changes you have made to github. Choose tools->git->Remote Repository->Push You will be asked for your github username and password. Now the changes are transferred to your repository on github.
+
+Finally, login to github, navigate to your fork of CatanScoreboard, and click "Pull request", and then click "Create pull request"
+Provide a meaningful summary and description, then click "Create pull request". Now the developers are notified of your changes.
+
+
+=============================
+Getting Qt (linux)
+=============================
+$ sudo apt-get install qt-sdk
+
+=============================
+Getting Dia (linux)
+=============================
+$ sudo apt-get install dia 
+
+=================
+Debugging (linux)
+=================
+Not written yet
+
+======================================
+Building a stand alone program (linux)
+======================================
+Not written yet
+
+==============================
+Building the installer (linux)
+==============================
+Not written yet
+
+================================
+Deploy to android device (linux)
+================================
+Not written yet
