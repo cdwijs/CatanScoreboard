@@ -80,7 +80,7 @@ http://dia-installer.de/
 ===================
 Debugging (windows)
 ===================
-Not written yet
+Double-click "CatanScoreborad.pro" Now Qt Creator should start, and load the project. Next click Debug->start debugging->start debugging. (or press F5). Now the program should be compiled, and after some time the program should start to run.
 
 ========================================
 Building a stand alone program (windows)
@@ -90,7 +90,9 @@ Not written yet
 ================================
 Building the installer (windows)
 ================================
-Not written yet
+Not written yet.
+See also:
+https://wiki.qt.io/Building_Qt_Installers
 
 ==================================
 Deploy to android device (windows)
