@@ -54,11 +54,10 @@ Getting Qt (Windows)
 http://www.qt.io/download-open-source/
 http://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe
 welcome-> next
-qt account -> leave all empty, next
+qt account -> leave all empty, skip
 setup -> next
 installation folder: c:\qt -> next
-select components: qt 5.4, deselect all, select minGW 4.9.1 -> next
-***and tools-mingw4.9.1
+select components: qt 5.4, deselect all, select minGW 4.9.1, , and tools-mingw4.9.1 -> next
 license Agreement: agree -> next
 start menu shortcuts -> next
 install
@@ -94,10 +93,23 @@ Not written yet.
 See also:
 https://wiki.qt.io/Building_Qt_Installers
 
+=================================
+Add support for android (windows)
+=================================
+Run "Qt maintenance tool", skip the Qt Account step, select "Add or remove components, next. You could get the message "There's an important update available, please run the installer first." In this case, restart Qt maintenance tool, skip the Qt Account step, select "Update components", next, select maintenance tool, next, update. Next run "Qt maintenance tool", skip the Qt Account step, select "Add or remove components, next.
+Open the Qt version installed, and select "Android x86", "Android armv5" or "Android armv7" depending on your android device. Then press next, and update, and finish.
+
+Run "Qt Creator", goto Tools->options->android, and press the green arrow after JDK location. Then click Java Platform (JDK) 8u60, accept the licence, and download "jdk-8u60-windows-x64.exe", run the installer and accept the defaults. Go back to Qt creator, Tools->options->android, JDK location and browse to C:\Program Files\Java\jdk1.8.0_60
+
+Run "Qt Creator", goto Tools->options->android, and press the green arrow after "Android SDK location" Scroll down to "SDK Tools Only", and download http://dl.google.com/android/installer_r24.3.4-windows.exe. Run the installer, and accept the defaults. Run the androi SDK manager as administrator. In the Android SDK Manager, select "Android SDK Platform-tools, Android SDK Build tools, and extra's Android support library and google USB driver". Click Install 4 packages, accept the license, and install. Go back to Qt creator, Tools->options->android, Android SDK location, and browse to C:\Program Files (x86)\Android\android-sdk
+
+Run "Qt Creator", goto Tools->options->android, and press the green arrow after "Android NDK location" Click "NDK Documentation and Downloads", and then click "downloads", and download http://dl.google.com/android/ndk/android-ndk-r10e-windows-x86_64.exe. Run the extracter, and point qt to the location of the extracted files. 
+
+
 ==================================
 Deploy to android device (windows)
 ==================================
-Not written yet
+Connect your tablet to the PC. Go to the developper options of the tablet, and activate "USB debugging". Open the project in Qt. In the left sidebar, select projects->build&run->Add Kit->Android for armabi-v7a (depending on your tablet), then click the left debug tile with the arrow, and select Android for armabi-v7a. Next press F5 (start debugging) Now a pop-up screen lets you select an android device.
 
 ============================================================
 Getting the source and contribute changes (ubuntu)
