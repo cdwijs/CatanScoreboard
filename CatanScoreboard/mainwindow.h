@@ -16,12 +16,13 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
-
     void on_tabWidget_currentChanged(int index);
+    void on_btnPlayersMin_pressed();
+    void on_btnPlayersPlus_pressed();
 
 private:
     Ui::MainWindow *ui;
+    int myNumPlayers;
 };
 
 #endif // MAINWINDOW_H

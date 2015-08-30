@@ -7,19 +7,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    myNumPlayers =3;
+    ui->lcdNumPlayers->display(myNumPlayers); //should come from settings
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void MainWindow::on_pushButton_clicked()
-{
-    //add a tab on clicked
-    //http://www.codeprogress.com/cpp/libraries/qt/qtQTabWidgetAddTab.php#.Vc11iPlESUk
-    //ui->tabWidget->addTab("tab3");
-    ui->tabWidget->addTab(new QWidget(),"NEW");
 }
 
 void MainWindow::on_tabWidget_currentChanged(int index)
@@ -39,4 +33,18 @@ void MainWindow::on_tabWidget_currentChanged(int index)
         }
 
     }
+}
+
+
+
+void MainWindow::on_btnPlayersMin_pressed()
+{
+    myNumPlayers--;
+    ui->lcdNumPlayers->display(myNumPlayers);
+}
+
+void MainWindow::on_btnPlayersPlus_pressed()
+{
+    myNumPlayers++;
+    ui->lcdNumPlayers->display(myNumPlayers);
 }

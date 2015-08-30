@@ -101,9 +101,11 @@ Open the Qt version installed, and select "Android x86", "Android armv5" or "And
 
 Run "Qt Creator", goto Tools->options->android, and press the green arrow after JDK location. Then click Java Platform (JDK) 8u60, accept the licence, and download "jdk-8u60-windows-x64.exe", run the installer and accept the defaults. Go back to Qt creator, Tools->options->android, JDK location and browse to C:\Program Files\Java\jdk1.8.0_60
 
-Run "Qt Creator", goto Tools->options->android, and press the green arrow after "Android SDK location" Scroll down to "SDK Tools Only", and download http://dl.google.com/android/installer_r24.3.4-windows.exe. Run the installer, and accept the defaults. Run the androi SDK manager as administrator. In the Android SDK Manager, select "Android SDK Platform-tools, Android SDK Build tools, and extra's Android support library and google USB driver". Click Install 4 packages, accept the license, and install. Go back to Qt creator, Tools->options->android, Android SDK location, and browse to C:\Program Files (x86)\Android\android-sdk
+Run "Qt Creator", goto Tools->options->android, and press the green arrow after "Android SDK location" Scroll down to "SDK Tools Only", and download http://dl.google.com/android/installer_r24.3.4-windows.exe. Run the installer, and accept the defaults. Run the androi SDK manager as administrator. In the Android SDK Manager, select "Android SDK Platform-tools, Android SDK Build tools, and extra's Android support library and google USB driver". Also select the android version of your device, and install "SDK platform". Click Install 5 packages, accept the license, and install. Go back to Qt creator, Tools->options->android, Android SDK location, and browse to C:\Program Files (x86)\Android\android-sdk
 
-Run "Qt Creator", goto Tools->options->android, and press the green arrow after "Android NDK location" Click "NDK Documentation and Downloads", and then click "downloads", and download http://dl.google.com/android/ndk/android-ndk-r10e-windows-x86_64.exe. Run the extracter, and point qt to the location of the extracted files. 
+Run "Qt Creator", goto Tools->options->android, and press the green arrow after "Android NDK location" Click "NDK Documentation and Downloads", and then click "downloads", and download http://dl.google.com/android/ndk/android-ndk-r10e-windows-x86_64.exe. Run the extracter, and point qt to the location of the extracted files.
+
+Run "Qt Creator", goto Tools->options->android, and press the green arrow after Ant Executable. Scroll down, and download http://ftp.tudelft.nl/apache//ant/binaries/apache-ant-1.9.6-bin.zip Unit it somewhere, and in Qt browse to ant.bat
 
 
 ==================================
