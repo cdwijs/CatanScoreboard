@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>471</width>
+    <height>415</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,12 +19,24 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>401</width>
-      <height>261</height>
+      <width>471</width>
+      <height>371</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="currentIndex">
      <number>1</number>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>16</height>
+     </size>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -33,14 +45,24 @@
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>80</y>
+        <x>460</x>
+        <y>340</y>
         <width>75</width>
         <height>23</height>
        </rect>
       </property>
       <property name="text">
        <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="textBrowser_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>251</width>
+        <height>361</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -51,20 +73,20 @@
      <widget class="QPushButton" name="pushButton_3">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>200</y>
-        <width>61</width>
-        <height>21</height>
+        <x>260</x>
+        <y>280</y>
+        <width>111</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="text">
-       <string>Addscore</string>
+       <string>Add score</string>
       </property>
      </widget>
      <widget class="QLCDNumber" name="lcdNumPlayers">
       <property name="geometry">
        <rect>
-        <x>260</x>
+        <x>400</x>
         <y>0</y>
         <width>41</width>
         <height>41</height>
@@ -106,14 +128,21 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>260</x>
         <y>10</y>
-        <width>47</width>
+        <width>161</width>
         <height>20</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
-       <string>Players</string>
+       <string>NaamVanSpeler</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btnRankMin">
@@ -209,12 +238,12 @@
        <rect>
         <x>310</x>
         <y>90</y>
-        <width>47</width>
-        <height>13</height>
+        <width>71</width>
+        <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>Points</string>
+       <string>Victory points</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btnStreetsMin">
@@ -276,7 +305,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>160</y>
+        <y>240</y>
         <width>121</width>
         <height>41</height>
        </rect>
@@ -289,20 +318,20 @@
       <property name="geometry">
        <rect>
         <x>130</x>
-        <y>160</y>
+        <y>240</y>
         <width>121</width>
         <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>-</string>
+       <string>+</string>
       </property>
      </widget>
      <widget class="QLCDNumber" name="lcdKnight">
       <property name="geometry">
        <rect>
         <x>260</x>
-        <y>160</y>
+        <y>240</y>
         <width>41</width>
         <height>41</height>
        </rect>
@@ -318,13 +347,123 @@
       <property name="geometry">
        <rect>
         <x>310</x>
-        <y>170</y>
-        <width>71</width>
+        <y>250</y>
+        <width>131</width>
         <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>Played Knight</string>
+       <string>Played Development cards</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnStreetsMin_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>160</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnStreetsPlus_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>160</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+     </widget>
+     <widget class="QLCDNumber" name="lcdStreets_2">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>160</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="digitCount">
+       <number>2</number>
+      </property>
+      <property name="segmentStyle">
+       <enum>QLCDNumber::Flat</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>170</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Unplayed Recource cards</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnStreetsMin_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>200</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnStreetsPlus_3">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>200</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+     </widget>
+     <widget class="QLCDNumber" name="lcdStreets_3">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>200</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="digitCount">
+       <number>2</number>
+      </property>
+      <property name="segmentStyle">
+       <enum>QLCDNumber::Flat</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>210</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Unplayed Development cards</string>
       </property>
      </widget>
     </widget>
@@ -332,6 +471,201 @@
      <attribute name="title">
       <string>Settings</string>
      </attribute>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>20</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 1</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>40</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 2</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_3">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>60</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 3</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_4">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>80</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 4</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_5">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>100</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 5</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_6">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>120</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 6</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_7">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>140</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 7</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_8">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>160</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 8</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_9">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>180</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 9</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_10">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>200</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 10</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_11">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>220</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 11</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_12">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>240</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 12</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_13">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>260</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 13</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_14">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>280</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 14</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_15">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>300</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>player 15</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="Debug">
      <attribute name="title">
@@ -355,7 +689,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>471</width>
      <height>21</height>
     </rect>
    </property>

@@ -3,18 +3,17 @@
 
 struct msgSettings
 {
-    int rewardVictoryPoints;
-    int rewardStreets;
-    int rewardKnightCardsPlayed;
-    int rewardDevelopmentCardsOnHand;
-    int rewardResourceCardsOnHand;
-    int reward4Player1st;
-    int reward4Player2nd;
-    int reward4Player3rd;
-    int reward4Player4rd;
-    int reward3Player1st;
-    int reward3Player2nd;
-    int reward3Player3rd;
+    double rewardVictoryPoints;
+    double rewardStreets;
+    double rewardResourceCardsUnplayed;
+    double rewardDevelCardsUnplayed;
+    double rewardDevelCardsPlayed;
+    double rewardPlayer1st;
+    double rewardPlayer2nd;
+    double rewardPlayer3rd;
+    double rewardPlayer4rd;
+    double rewardPlayer5th;
+    double rewardPlayer6th;
 };
 
 class settings
