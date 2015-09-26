@@ -2,12 +2,18 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     myNumPlayers =3;
+    myNumRank =0; //0=winner, add enum
+    myPoints=0;
+    myStreets=0;
+    myKnights=0;
     ui->lcdNumPlayers->display(myNumPlayers); //should come from settings
 }
 
@@ -40,74 +46,150 @@ void MainWindow::on_tabWidget_currentChanged(int index)
 
 void MainWindow::on_btnPlayersMin_pressed()
 {
-    myNumPlayers--;
-    ui->lcdNumPlayers->display(myNumPlayers);
-    ui->textBrowser->append("on_btnPlayersMin_pressed");
+    if (myNumPlayers > 3)
+    {
+        myNumPlayers--;
+        ui->lcdNumPlayers->display(myNumPlayers);
+        ui->textBrowser->append("on_btnPlayersMin_pressed");
+    }
 }
 
 void MainWindow::on_btnPlayersPlus_pressed()
 {
-    myNumPlayers++;
-    ui->lcdNumPlayers->display(myNumPlayers);
-    ui->textBrowser->append("on_btnPlayersPlus_pressed");
+    if (myNumPlayers < 6)
+    {
+        myNumPlayers++;
+        ui->lcdNumPlayers->display(myNumPlayers);
+        ui->textBrowser->append("on_btnPlayersPlus_pressed");
+    }
 }
 
-void MainWindow::on_toolButton_clicked()
+void MainWindow::on_btnRankMin_pressed()
 {
-    ui->textBrowser->append("on_toolButton_clicked");
+    if (myNumRank < (myNumPlayers-1))
+    {
+        myNumRank++;
+    }
+    switch (myNumRank)
+    {
+        case 0: //winner
+        {
+            ui->labelRank->setText("Winner");
+            break;
+        }
+        case 1:
+        {
+            ui->labelRank->setText("Second");
+            break;
+        }
+        case 2:
+        {
+            ui->labelRank->setText("Third");
+            break;
+        }
+        case 3:
+        {
+            ui->labelRank->setText("Fourth");
+            break;
+        }
+        case 4:
+        {
+            ui->labelRank->setText("Fifth");
+            break;
+        }
+        case 5:
+        {
+            ui->labelRank->setText("Sixth");
+            break;
+        }
+    }
 }
 
-void MainWindow::on_toolButton_clicked(bool checked)
+void MainWindow::on_btnRankPlus_pressed()
 {
-    ui->textBrowser->append("on_toolButton_clicked(bool checked)");
+    if (myNumRank > 0)
+    {
+        myNumRank--;
+    }
+    switch (myNumRank)
+    {
+        case 0: //winner
+        {
+            ui->labelRank->setText("Winner");
+            break;
+        }
+        case 1:
+        {
+            ui->labelRank->setText("Second");
+            break;
+        }
+        case 2:
+        {
+            ui->labelRank->setText("Third");
+            break;
+        }
+        case 3:
+        {
+            ui->labelRank->setText("Fourth");
+            break;
+        }
+        case 4:
+        {
+            ui->labelRank->setText("Fifth");
+            break;
+        }
+        case 5:
+        {
+            ui->labelRank->setText("Sixth");
+            break;
+        }
+    }
 }
 
-void MainWindow::on_toolButton_pressed()
+void MainWindow::on_btnPointsMin_pressed()
 {
-     ui->textBrowser->append("on_toolButton_pressed()");
+    if (myPoints>0)
+    {
+        myPoints--;
+        ui->lcdPoints->display(myPoints);
+    }
 }
 
-void MainWindow::on_toolButton_released()
+void MainWindow::on_btnPointsPlus_pressed()
 {
-    ui->textBrowser->append("on_toolButton_released()");
+    myPoints++;
+    ui->lcdPoints->display(myPoints);
 }
 
-void MainWindow::on_toolButton_toggled(bool checked)
+void MainWindow::on_btnStreetsMin_pressed()
 {
-    ui->textBrowser->append("on_toolButton_toggled(bool checked)");
+    if (myStreets>0)
+    {
+        myStreets--;
+        ui->lcdStreets->display(myStreets);
+    }
 }
 
-void MainWindow::on_toolButton_destroyed()
+void MainWindow::on_btnStreetsPlus_pressed()
 {
-    ui->textBrowser->append("on_toolButton_destroyed()");
+    if (myStreets < 15)
+    {
+        myStreets++;
+        ui->lcdStreets->display(myStreets);
+    }
 }
 
-void MainWindow::on_toolButton_destroyed(QObject *arg1)
+void MainWindow::on_btnKnightMin_pressed()
 {
-    ui->textBrowser->append("on_toolButton_destroyed(QObject *arg1)");
+    if (myKnights>0)
+    {
+        myKnights--;
+        ui->lcdKnight->display(myKnights);
+    }
 }
 
-void MainWindow::on_toolButton_objectNameChanged(const QString &objectName)
+void MainWindow::on_btnKnightPlus_pressed()
 {
-    ui->textBrowser->append("on_toolButton_objectNameChanged(const QString &objectName)");
-}
-
-void MainWindow::on_toolButton_triggered(QAction *arg1)
-{
-    ui->textBrowser->append("on_toolButton_triggered(QAction *arg1)");
-}
-
-void MainWindow::on_toolButton_customContextMenuRequested(const QPoint &pos)
-{
-    ui->textBrowser->append("on_toolButton_customContextMenuRequested(const QPoint &pos)");
-}
-
-void MainWindow::on_toolButton_windowIconTextChanged(const QString &iconText)
-{
-    ui->textBrowser->append("on_toolButton_windowIconTextChanged(const QString &iconText)");
-}
-
-void MainWindow::on_toolButton_windowTitleChanged(const QString &title)
-{
-    ui->textBrowser->append("on_toolButton_windowTitleChanged(const QString &title)");
+    myKnights++;
+    ui->lcdKnight->display(myKnights);
 }

@@ -19,34 +19,29 @@ private slots:
     void on_tabWidget_currentChanged(int index);
     void on_btnPlayersMin_pressed();
     void on_btnPlayersPlus_pressed();
+    void on_btnRankMin_pressed();
 
-    void on_toolButton_clicked();
+    void on_btnRankPlus_pressed();
 
-    void on_toolButton_clicked(bool checked);
+    void on_btnPointsMin_pressed();
 
-    void on_toolButton_pressed();
+    void on_btnPointsPlus_pressed();
 
-    void on_toolButton_released();
+    void on_btnStreetsMin_pressed();
 
-    void on_toolButton_toggled(bool checked);
+    void on_btnStreetsPlus_pressed();
 
-    void on_toolButton_destroyed();
+    void on_btnKnightMin_pressed();
 
-    void on_toolButton_destroyed(QObject *arg1);
-
-    void on_toolButton_objectNameChanged(const QString &objectName);
-
-    void on_toolButton_triggered(QAction *arg1);
-
-    void on_toolButton_customContextMenuRequested(const QPoint &pos);
-
-    void on_toolButton_windowIconTextChanged(const QString &iconText);
-
-    void on_toolButton_windowTitleChanged(const QString &title);
+    void on_btnKnightPlus_pressed();
 
 private:
     Ui::MainWindow *ui;
     int myNumPlayers;
+    int myNumRank;
+    int myPoints;
+    int myStreets;
+    int myKnights;
 };
 
 #endif // MAINWINDOW_H
