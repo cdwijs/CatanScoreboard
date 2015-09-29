@@ -2,6 +2,7 @@
 #define SETTINGS_H
 
 #include <QSettings>
+#include <QString>
 
 struct msgSettings
 {
@@ -43,7 +44,7 @@ public:
     settings();
     msgSettings getSettings (void);
     msgPlayers getPlayers (void);
-    void loadPlayers (void); //get players from disk
+    QString getPlayerName (int player);
 private:
     msgSettings mySettings;
     msgPlayers myPlayers;

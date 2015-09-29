@@ -24,7 +24,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -140,16 +140,6 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="4">
-           <widget class="QLCDNumber" name="lcdNumPlayers">
-            <property name="digitCount">
-             <number>2</number>
-            </property>
-            <property name="segmentStyle">
-             <enum>QLCDNumber::Flat</enum>
-            </property>
-           </widget>
-          </item>
           <item row="1" column="1">
            <widget class="QPushButton" name="btnRankPlus">
             <property name="sizePolicy">
@@ -177,20 +167,6 @@
            <widget class="QLabel" name="label_3">
             <property name="text">
              <string>Streets</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2" colspan="2">
-           <widget class="QLabel" name="label">
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>NaamVanSpeler</string>
             </property>
            </widget>
           </item>
@@ -323,6 +299,20 @@
            <widget class="QLabel" name="label_2">
             <property name="text">
              <string>Victory points</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2" colspan="3">
+           <widget class="QLabel" name="labelPlayer">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>NaamVanSpeler</string>
             </property>
            </widget>
           </item>

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QSettings>
+#include "settings.h"
 
 namespace Ui {
 class MainWindow;
@@ -70,7 +71,9 @@ private slots:
 private:
 
     Ui::MainWindow *ui;
-    int myNumPlayers;
+    settings mySettings;
+    //int myNumPlayers;
+    int myCurrentPlayer;
     int myNumRank;
     int myPoints;
     int myStreets;

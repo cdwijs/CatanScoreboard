@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 #include <QDebug>
 
 
@@ -33,12 +34,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     //send signal to settings.cpp to load playernames and rewards
-    myNumPlayers =3;
+    myCurrentPlayer =0;
+    ui->labelPlayer->setText(mySettings.getPlayerName(myCurrentPlayer));
     myNumRank =0; //0=winner, add enum
     myPoints=0;
     myStreets=0;
     myKnights=0;
-    ui->lcdNumPlayers->display(myNumPlayers); //should come from settings
+    //ui->lcdNumPlayers->display(myNumPlayers); //should come from settings
 }
 
 MainWindow::~MainWindow()
@@ -70,27 +72,25 @@ void MainWindow::on_tabWidget_currentChanged(int index)
 
 void MainWindow::on_btnPlayersMin_pressed()
 {
-    if (myNumPlayers > 3)
+    if (myCurrentPlayer > 0)
     {
-        myNumPlayers--;
-        ui->lcdNumPlayers->display(myNumPlayers);
-        ui->textBrowser->append("on_btnPlayersMin_pressed");
+        myCurrentPlayer--;
     }
+    ui->labelPlayer->setText(mySettings.getPlayerName(myCurrentPlayer));
 }
 
 void MainWindow::on_btnPlayersPlus_pressed()
 {
-    if (myNumPlayers < 6)
+    if (myCurrentPlayer < 14)
     {
-        myNumPlayers++;
-        ui->lcdNumPlayers->display(myNumPlayers);
-        ui->textBrowser->append("on_btnPlayersPlus_pressed");
+        myCurrentPlayer++;
+        ui->labelPlayer->setText(mySettings.getPlayerName(myCurrentPlayer));
     }
 }
 
 void MainWindow::on_btnRankMin_pressed()
 {
-    if (myNumRank < (myNumPlayers-1))
+    if (myNumRank < 5)
     {
         myNumRank++;
     }
