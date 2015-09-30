@@ -68,6 +68,15 @@ private slots:
     void on_lineEdit_14_textEdited(const QString &arg1);
 
     void on_lineEdit_15_textEdited(const QString &arg1);
+
+    void on_btnUnplayedResourcePlus_pressed();
+
+    void on_btnUnplayedResourceMin_pressed();
+
+    void on_btnUnplayedDevelPlus_pressed();
+
+    void on_btnUnplayedDevelMin_pressed();
+
 private:
 
     Ui::MainWindow *ui;
@@ -78,6 +87,8 @@ private:
     int myPoints;
     int myStreets;
     int myKnights;
+    int myUnplayedResourceCards;
+    int myUnplayedDevelCards;
 };
 
 #endif // MAINWINDOW_H

@@ -40,7 +40,8 @@ MainWindow::MainWindow(QWidget *parent) :
     myPoints=0;
     myStreets=0;
     myKnights=0;
-    //ui->lcdNumPlayers->display(myNumPlayers); //should come from settings
+    myUnplayedResourceCards=0;
+    myUnplayedDevelCards=0;
 }
 
 MainWindow::~MainWindow()
@@ -181,8 +182,11 @@ void MainWindow::on_btnPointsMin_pressed()
 
 void MainWindow::on_btnPointsPlus_pressed()
 {
-    myPoints++;
-    ui->lcdPoints->display(myPoints);
+    if (myPoints<15)
+    {
+        myPoints++;
+        ui->lcdPoints->display(myPoints);
+    }
 }
 
 void MainWindow::on_btnStreetsMin_pressed()
@@ -208,15 +212,56 @@ void MainWindow::on_btnKnightMin_pressed()
     if (myKnights>0)
     {
         myKnights--;
-        ui->lcdKnight->display(myKnights);
+        ui->lcdPlayedDevelCards->display(myKnights);
     }
 }
 
 void MainWindow::on_btnKnightPlus_pressed()
 {
-    myKnights++;
-    ui->lcdKnight->display(myKnights);
+    if (myKnights < 15)
+    {
+        myKnights++;
+        ui->lcdPlayedDevelCards->display(myKnights);
+    }
 }
+
+
+void MainWindow::on_btnUnplayedResourcePlus_pressed()
+{
+    if (myUnplayedResourceCards < 15)
+    {
+        myUnplayedResourceCards++;
+        ui->lcdUnplayedResourceCards->display(myUnplayedResourceCards);
+    }
+}
+
+void MainWindow::on_btnUnplayedResourceMin_pressed()
+{
+    if (myUnplayedResourceCards > 0)
+    {
+        myUnplayedResourceCards--;
+        ui->lcdUnplayedResourceCards->display(myUnplayedResourceCards);
+    }
+}
+
+void MainWindow::on_btnUnplayedDevelPlus_pressed()
+{
+    if (myUnplayedDevelCards < 15)
+    {
+        myUnplayedDevelCards++;
+        ui->lcdUnplayedDevelCards->display(myUnplayedDevelCards);
+    }
+}
+
+void MainWindow::on_btnUnplayedDevelMin_pressed()
+{
+    if (myUnplayedDevelCards > 0)
+    {
+        myUnplayedDevelCards--;
+        ui->lcdUnplayedDevelCards->display(myUnplayedDevelCards);
+    }
+}
+
 
 void MainWindow::on_btnAddScore_pressed()
 {
@@ -314,3 +359,4 @@ void MainWindow::on_lineEdit_15_textEdited(const QString &arg1)
     QSettings settings;
     settings.setValue("players/Player15",arg1);
 }
+
