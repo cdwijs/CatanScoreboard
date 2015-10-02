@@ -4,11 +4,43 @@
 score::score(void)
 { //load the scores from setings, and add them all to totals
     unsigned int i;
+    QSettings settings;
     for(i=0;i<15;i++)
     {
         myTotalScores.player[i]=i;
     }
+
     //load scores here, also keep a counter for arraysize
+    myTotalScores.numGamesPlayed[0]=settings.value("TotalScores/numGamesPlayed/0").toInt();
+    myTotalScores.numGamesPlayed[1]=settings.value("TotalScores/numGamesPlayed/1").toInt();
+    myTotalScores.numGamesPlayed[2]=settings.value("TotalScores/numGamesPlayed/2").toInt();
+    myTotalScores.numGamesPlayed[3]=settings.value("TotalScores/numGamesPlayed/3").toInt();
+    myTotalScores.numGamesPlayed[4]=settings.value("TotalScores/numGamesPlayed/4").toInt();
+    myTotalScores.numGamesPlayed[5]=settings.value("TotalScores/numGamesPlayed/5").toInt();
+    myTotalScores.numGamesPlayed[6]=settings.value("TotalScores/numGamesPlayed/6").toInt();
+    myTotalScores.numGamesPlayed[7]=settings.value("TotalScores/numGamesPlayed/7").toInt();
+    myTotalScores.numGamesPlayed[8]=settings.value("TotalScores/numGamesPlayed/8").toInt();
+    myTotalScores.numGamesPlayed[9]=settings.value("TotalScores/numGamesPlayed/9").toInt();
+    myTotalScores.numGamesPlayed[10]=settings.value("TotalScores/numGamesPlayed/10").toInt();
+    myTotalScores.numGamesPlayed[11]=settings.value("TotalScores/numGamesPlayed/11").toInt();
+    myTotalScores.numGamesPlayed[12]=settings.value("TotalScores/numGamesPlayed/12").toInt();
+    myTotalScores.numGamesPlayed[13]=settings.value("TotalScores/numGamesPlayed/13").toInt();
+    myTotalScores.numGamesPlayed[14]=settings.value("TotalScores/numGamesPlayed/14").toInt();
+    myTotalScores.totalScore[0]=settings.value("TotalScores/totalScore/0").toInt();
+    myTotalScores.totalScore[1]=settings.value("TotalScores/totalScore/1").toInt();
+    myTotalScores.totalScore[2]=settings.value("TotalScores/totalScore/2").toInt();
+    myTotalScores.totalScore[3]=settings.value("TotalScores/totalScore/3").toInt();
+    myTotalScores.totalScore[4]=settings.value("TotalScores/totalScore/4").toInt();
+    myTotalScores.totalScore[5]=settings.value("TotalScores/totalScore/5").toInt();
+    myTotalScores.totalScore[6]=settings.value("TotalScores/totalScore/6").toInt();
+    myTotalScores.totalScore[7]=settings.value("TotalScores/totalScore/7").toInt();
+    myTotalScores.totalScore[8]=settings.value("TotalScores/totalScore/8").toInt();
+    myTotalScores.totalScore[9]=settings.value("TotalScores/totalScore/9").toInt();
+    myTotalScores.totalScore[10]=settings.value("TotalScores/totalScore/10").toInt();
+    myTotalScores.totalScore[11]=settings.value("TotalScores/totalScore/11").toInt();
+    myTotalScores.totalScore[12]=settings.value("TotalScores/totalScore/12").toInt();
+    myTotalScores.totalScore[13]=settings.value("TotalScores/totalScore/13").toInt();
+    myTotalScores.totalScore[14]=settings.value("TotalScores/totalScore/14").toInt();
 }
 
 recordTotalScores score::GetScores()
@@ -22,6 +54,7 @@ void score::AddScore(scoreRecord scorerecord)
     double result=0;
     //msgSettings settings = mySettings.getSettings(); //unitialized
     msgSettings mySettings;
+    QSettings settings;
 
     mySettings.rewardVictoryPoints              =10; //quick hack, should come from QSettings object
     mySettings.rewardStreets                    =1;
@@ -77,17 +110,78 @@ void score::AddScore(scoreRecord scorerecord)
     }
     myTotalScores.numGamesPlayed[scorerecord.myCurrentPlayer] += 1;
     myTotalScores.totalScore[scorerecord.myCurrentPlayer] += result;
-    //store in settings file here
+    settings.setValue("TotalScores/numGamesPlayed/0",myTotalScores.numGamesPlayed[0]);
+    settings.setValue("TotalScores/numGamesPlayed/1",myTotalScores.numGamesPlayed[1]);
+    settings.setValue("TotalScores/numGamesPlayed/2",myTotalScores.numGamesPlayed[2]);
+    settings.setValue("TotalScores/numGamesPlayed/3",myTotalScores.numGamesPlayed[3]);
+    settings.setValue("TotalScores/numGamesPlayed/4",myTotalScores.numGamesPlayed[4]);
+    settings.setValue("TotalScores/numGamesPlayed/5",myTotalScores.numGamesPlayed[5]);
+    settings.setValue("TotalScores/numGamesPlayed/6",myTotalScores.numGamesPlayed[6]);
+    settings.setValue("TotalScores/numGamesPlayed/7",myTotalScores.numGamesPlayed[7]);
+    settings.setValue("TotalScores/numGamesPlayed/8",myTotalScores.numGamesPlayed[8]);
+    settings.setValue("TotalScores/numGamesPlayed/9",myTotalScores.numGamesPlayed[9]);
+    settings.setValue("TotalScores/numGamesPlayed/10",myTotalScores.numGamesPlayed[10]);
+    settings.setValue("TotalScores/numGamesPlayed/11",myTotalScores.numGamesPlayed[11]);
+    settings.setValue("TotalScores/numGamesPlayed/12",myTotalScores.numGamesPlayed[12]);
+    settings.setValue("TotalScores/numGamesPlayed/13",myTotalScores.numGamesPlayed[13]);
+    settings.setValue("TotalScores/numGamesPlayed/14",myTotalScores.numGamesPlayed[14]);
+    settings.setValue("TotalScores/totalScore/0",myTotalScores.totalScore[0]);
+    settings.setValue("TotalScores/totalScore/1",myTotalScores.totalScore[1]);
+    settings.setValue("TotalScores/totalScore/2",myTotalScores.totalScore[2]);
+    settings.setValue("TotalScores/totalScore/3",myTotalScores.totalScore[3]);
+    settings.setValue("TotalScores/totalScore/4",myTotalScores.totalScore[4]);
+    settings.setValue("TotalScores/totalScore/5",myTotalScores.totalScore[5]);
+    settings.setValue("TotalScores/totalScore/6",myTotalScores.totalScore[6]);
+    settings.setValue("TotalScores/totalScore/7",myTotalScores.totalScore[7]);
+    settings.setValue("TotalScores/totalScore/8",myTotalScores.totalScore[8]);
+    settings.setValue("TotalScores/totalScore/9",myTotalScores.totalScore[9]);
+    settings.setValue("TotalScores/totalScore/10",myTotalScores.totalScore[10]);
+    settings.setValue("TotalScores/totalScore/11",myTotalScores.totalScore[11]);
+    settings.setValue("TotalScores/totalScore/12",myTotalScores.totalScore[12]);
+    settings.setValue("TotalScores/totalScore/13",myTotalScores.totalScore[13]);
+    settings.setValue("TotalScores/totalScore/14",myTotalScores.totalScore[14]);
     //emit sigNewTotalScores(recordTotalScores myTotalScores);
 }
 
 void score::ClearScores(void)
 {
     int i;
+    QSettings settings;
+
+
     for(i=0;i<15;i++)
     {
         myTotalScores.numGamesPlayed[i]=0;
         myTotalScores.totalScore[i]=0;
-        //store in settings file here
     }
+    settings.setValue("TotalScores/numGamesPlayed/0",myTotalScores.numGamesPlayed[0]);
+    settings.setValue("TotalScores/numGamesPlayed/1",myTotalScores.numGamesPlayed[1]);
+    settings.setValue("TotalScores/numGamesPlayed/2",myTotalScores.numGamesPlayed[2]);
+    settings.setValue("TotalScores/numGamesPlayed/3",myTotalScores.numGamesPlayed[3]);
+    settings.setValue("TotalScores/numGamesPlayed/4",myTotalScores.numGamesPlayed[4]);
+    settings.setValue("TotalScores/numGamesPlayed/5",myTotalScores.numGamesPlayed[5]);
+    settings.setValue("TotalScores/numGamesPlayed/6",myTotalScores.numGamesPlayed[6]);
+    settings.setValue("TotalScores/numGamesPlayed/7",myTotalScores.numGamesPlayed[7]);
+    settings.setValue("TotalScores/numGamesPlayed/8",myTotalScores.numGamesPlayed[8]);
+    settings.setValue("TotalScores/numGamesPlayed/9",myTotalScores.numGamesPlayed[9]);
+    settings.setValue("TotalScores/numGamesPlayed/10",myTotalScores.numGamesPlayed[10]);
+    settings.setValue("TotalScores/numGamesPlayed/11",myTotalScores.numGamesPlayed[11]);
+    settings.setValue("TotalScores/numGamesPlayed/12",myTotalScores.numGamesPlayed[12]);
+    settings.setValue("TotalScores/numGamesPlayed/13",myTotalScores.numGamesPlayed[13]);
+    settings.setValue("TotalScores/numGamesPlayed/14",myTotalScores.numGamesPlayed[14]);
+    settings.setValue("TotalScores/totalScore/0",myTotalScores.totalScore[0]);
+    settings.setValue("TotalScores/totalScore/1",myTotalScores.totalScore[1]);
+    settings.setValue("TotalScores/totalScore/2",myTotalScores.totalScore[2]);
+    settings.setValue("TotalScores/totalScore/3",myTotalScores.totalScore[3]);
+    settings.setValue("TotalScores/totalScore/4",myTotalScores.totalScore[4]);
+    settings.setValue("TotalScores/totalScore/5",myTotalScores.totalScore[5]);
+    settings.setValue("TotalScores/totalScore/6",myTotalScores.totalScore[6]);
+    settings.setValue("TotalScores/totalScore/7",myTotalScores.totalScore[7]);
+    settings.setValue("TotalScores/totalScore/8",myTotalScores.totalScore[8]);
+    settings.setValue("TotalScores/totalScore/9",myTotalScores.totalScore[9]);
+    settings.setValue("TotalScores/totalScore/10",myTotalScores.totalScore[10]);
+    settings.setValue("TotalScores/totalScore/11",myTotalScores.totalScore[11]);
+    settings.setValue("TotalScores/totalScore/12",myTotalScores.totalScore[12]);
+    settings.setValue("TotalScores/totalScore/13",myTotalScores.totalScore[13]);
+    settings.setValue("TotalScores/totalScore/14",myTotalScores.totalScore[14]);
 }
