@@ -30,7 +30,7 @@
      </sizepolicy>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <property name="iconSize">
      <size>
@@ -46,7 +46,7 @@
       <item row="0" column="0">
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QTextBrowser" name="textBrowser_2"/>
+         <widget class="QTextBrowser" name="textBrowserLeaderBoard"/>
         </item>
        </layout>
       </item>

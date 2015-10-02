@@ -51,6 +51,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_tabWidget_currentChanged(int index)
 {
+    QString string;
+    QString string2;
+    double score;
+    QSettings settings;
     ui->textBrowser->append("on_tabWidget_currentChanged");
     qDebug("index: %d",index);
     switch (index)
@@ -58,6 +62,201 @@ void MainWindow::on_tabWidget_currentChanged(int index)
         case 0:
         {
             qDebug("update leaderboard");
+            //here's the visible magic :-)
+            ui->textBrowserLeaderBoard->clear();
+
+            string = mySettings.getPlayerName(0);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/0").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/0").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/0").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/0").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+            string = mySettings.getPlayerName(1);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/1").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/1").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/1").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/1").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+
+            string = mySettings.getPlayerName(2);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/2").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/2").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/2").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/2").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+
+            string = mySettings.getPlayerName(3);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/3").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/3").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/3").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/3").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+
+            string = mySettings.getPlayerName(4);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/4").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/4").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/4").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/4").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+
+            string = mySettings.getPlayerName(5);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/5").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/5").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/5").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/5").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+
+            string = mySettings.getPlayerName(6);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/6").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/6").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/6").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/6").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+
+            string = mySettings.getPlayerName(7);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/7").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/7").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/7").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/7").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+
+            string = mySettings.getPlayerName(8);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/8").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/8").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/8").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/8").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+
+            string = mySettings.getPlayerName(9);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/9").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/9").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/9").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/9").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+
+            string = mySettings.getPlayerName(10);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/10").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/10").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/10").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/10").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+
+            string = mySettings.getPlayerName(11);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/11").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/11").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/11").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/11").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+
+            string = mySettings.getPlayerName(12);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/12").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/12").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/12").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/12").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+
+            string = mySettings.getPlayerName(13);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/13").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/13").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/13").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/13").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
+
+
+            string = mySettings.getPlayerName(14);
+            string.append("\t");
+            string.append(settings.value("TotalScores/numGamesPlayed/14").toString());
+            string.append("\t");
+            string.append(settings.value("TotalScores/totalScore/14").toString());
+            string.append("\t");
+            score = settings.value("TotalScores/totalScore/14").toDouble();
+            score /= settings.value("TotalScores/numGamesPlayed/14").toInt();
+            string2.sprintf("%.2f",score);
+            string.append(string2);
+            ui->textBrowserLeaderBoard->append(string);
             break;
         }
         case 1:
@@ -265,7 +464,7 @@ void MainWindow::on_btnUnplayedDevelMin_pressed()
 
 void MainWindow::on_btnAddScore_pressed()
 {
-    //gather all the sorecomponents from ui controls
+    //gather all the scorecomponents from ui controls
     myScoreRecord.myCurrentPlayer = myCurrentPlayer; //adjust button handlers to use myScoreRecord directly
     myScoreRecord.myNumRank = myNumRank;
     myScoreRecord.numPlayedDevelopmentCards = myKnights;

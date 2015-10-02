@@ -17,7 +17,7 @@ struct scoreRecord
 struct recordTotalScores
 {
     unsigned int numGamesPlayed[15];
-    unsigned int totalScore[15];
+    double totalScore[15];
     unsigned int player[15];
 };
 
@@ -25,7 +25,7 @@ class score
 {
 public:
     score(void);
-    recordTotalScores GetScores (void);
+   // recordTotalScores GetScores (void);
     void AddScore (scoreRecord scorerecord);
     void ClearScores (void);
 private:
