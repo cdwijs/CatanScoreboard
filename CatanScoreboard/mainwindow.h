@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QSettings>
 #include "settings.h"
+#include "score.h"
 
 namespace Ui {
 class MainWindow;
@@ -77,18 +78,22 @@ private slots:
 
     void on_btnUnplayedDevelMin_pressed();
 
+    void on_btnClearLeaderboard_pressed();
+
 private:
 
     Ui::MainWindow *ui;
     settings mySettings;
     //int myNumPlayers;
-    int myCurrentPlayer;
-    int myNumRank;
+    int myCurrentPlayer; //move to struct in score.h
+    int myNumRank;       //next send complete struct to score
     int myPoints;
     int myStreets;
     int myKnights;
     int myUnplayedResourceCards;
     int myUnplayedDevelCards;
+    scoreRecord myScoreRecord;
+    score myScore;
 };
 
 #endif // MAINWINDOW_H

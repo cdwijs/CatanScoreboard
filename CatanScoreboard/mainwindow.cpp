@@ -265,8 +265,15 @@ void MainWindow::on_btnUnplayedDevelMin_pressed()
 
 void MainWindow::on_btnAddScore_pressed()
 {
-    //get the players name
-    //calculate the score, and send signal to scoreboard
+    //gather all the sorecomponents from ui controls
+    myScoreRecord.myCurrentPlayer = myCurrentPlayer; //adjust button handlers to use myScoreRecord directly
+    myScoreRecord.myNumRank = myNumRank;
+    myScoreRecord.numPlayedDevelopmentCards = myKnights;
+    myScoreRecord.numStreets = myStreets;
+    myScoreRecord.numUnplayedDevelopmentCards = myUnplayedDevelCards;
+    myScoreRecord.numUnplayedResourceCards = myUnplayedResourceCards;
+    myScoreRecord.numVictoryPoints = myPoints;
+    myScore.AddScore(myScoreRecord);
 }
 
 void MainWindow::on_lineEdit_1_textEdited(const QString &arg1)
@@ -360,3 +367,8 @@ void MainWindow::on_lineEdit_15_textEdited(const QString &arg1)
     settings.setValue("players/Player15",arg1);
 }
 
+
+void MainWindow::on_btnClearLeaderboard_pressed()
+{
+    myScore.ClearScores();
+}

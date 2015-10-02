@@ -1,24 +1,35 @@
 #ifndef SCORE_H
 #define SCORE_H
 
-struct scorerecord
+#include "settings.h"
+
+struct scoreRecord
 {
+    unsigned int myCurrentPlayer;
+    unsigned int myNumRank;
     unsigned int numVictoryPoints;
     unsigned int numStreets;
-    unsigned int numKnightCardsPlayed;
-    unsigned int numDevelopmentCardsOnHand;
-    unsigned int numResourceCardsOnHand;
+    unsigned int numPlayedDevelopmentCards;
+    unsigned int numUnplayedDevelopmentCards;
+    unsigned int numUnplayedResourceCards;
 };
 
+struct recordTotalScores
+{
+    unsigned int numGamesPlayed[15];
+    unsigned int totalScore[15];
+    unsigned int player[15];
+};
 
 class score
 {
 public:
-    score(scorerecord *scorerecord);
-    unsigned int GetScore (void);
+    score(void);
+    recordTotalScores GetScores (void);
+    void AddScore (scoreRecord scorerecord);
+    void ClearScores (void);
 private:
-    scorerecord myScore;
-    unsigned int totalScore;
+    recordTotalScores myTotalScores;
 };
 
 #endif // SCORE_H

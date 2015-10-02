@@ -16,7 +16,7 @@ settings::settings()
     mySettings.rewardPlayer5th                 =10;
     mySettings.rewardPlayer6th                 =10;
 }
-
+/*
 msgSettings settings::getSettings()
 {
     QSettings settings;
@@ -25,7 +25,7 @@ msgSettings settings::getSettings()
         mySettings.rewardDevelCardsPlayed = settings.value("reward/VictoryPoints").toDouble();
     }
     return mySettings;
-}
+}*/
 
 QString settings::getPlayerName(int player)
 {

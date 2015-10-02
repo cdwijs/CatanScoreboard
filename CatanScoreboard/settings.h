@@ -42,7 +42,7 @@ class settings
 {
 public:
     settings();
-    msgSettings getSettings (void);
+   // msgSettings getSettings (void);
     msgPlayers getPlayers (void);
     QString getPlayerName (int player);
 private:
