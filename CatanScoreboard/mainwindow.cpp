@@ -473,6 +473,7 @@ void MainWindow::on_btnAddScore_pressed()
     myScoreRecord.numUnplayedResourceCards = myUnplayedResourceCards;
     myScoreRecord.numVictoryPoints = myPoints;
     myScore.AddScore(myScoreRecord);
+    ui->tabWidget->setCurrentIndex(0);
 }
 
 void MainWindow::on_lineEdit_1_textEdited(const QString &arg1)
